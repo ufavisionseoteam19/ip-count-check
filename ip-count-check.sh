@@ -15,7 +15,7 @@ FILTER="${1:-}"                           # คำกรองจาก argument
 
 # ชื่อไฟล์ผลลัพธ์
 if [ -z "$FILTER" ]; then TAG="all"; else TAG=$(echo "$FILTER" | tr -cd '[:alnum:]'); fi
-OUT="$OUTDIR/ip_count_${TAG}_$(date +%Y%m%d_%H%M).txt"
+OUT="$OUTDIR/ip_count_${TAG}.txt"
 TMP=$(mktemp /tmp/ipcount.XXXXXX)
 trap 'rm -f "$TMP"' EXIT   # ลบไฟล์ชั่วคราวอัตโนมัติเมื่อจบ
 
